@@ -11,5 +11,9 @@
     <a href="{{ route('bienvenidos') }}">Bienvenidos</a>
     <br>
     <a href="{{ route('dudoso') }}">Dudosos</a>
+    <br>
+    <a href="{{ route('estudiantes.index') }}">Estudiantes</a>
+    <br>
+    <a href="{{ route('Notas.index') }}">Notas</a>
 </body>
 </html>
