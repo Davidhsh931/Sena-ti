@@ -68,9 +68,9 @@ Estudiantes
                             </td>
 
                             <td class="py-2 px-4 border-b border-gray-300">
-                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <a href="{{ route('estudiantes.ver', $estudiante->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                     Ver
-                                </button>
+                                </a>
                             </td>
                             <td class="py-2 px-4 border-b border-gray-300">
                                 <a href="{{ route('estudiantes.edit', $estudiante->id) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
@@ -78,9 +78,9 @@ Estudiantes
                                 </a>
                             </td>
                             <td class="py-2 px-4 border-b border-gray-300">
-                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                <a href="{{ route('estudiantes.delete', $estudiante->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                                     Eliminar
-                                </button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('estudiantes', function (Blueprint $table) {
             $table->id();
-            $table->string('codigo', length:21)->nullable();
-            $table->string('nombres', length:120);
-            $table->string('pri_ape', length:120);
-            $table->string('seg_ape', length:100);
-            $table->string('dni', length:8)->nullable();
+            $table->string('codigo', length: 21)->nullable();
+            $table->string('nombres', length: 120);
+            $table->string('pri_ape', length: 120);
+            $table->string('seg_ape', length: 100);
+            $table->string('dni', length: 8)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notas</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body>
-    <h1 class="text-3x1 font-bold underline">
-        Notas Create
-    </h1>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Notas</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <h1 class="text-3xl font-bold underline">
+            Notas Edit
+        </h1>
+        <br>
 
-    <br>
-        <form action="{{ route('Notas.store') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form action="{{ route('Notas.update', $notas) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         
             @csrf
 
@@ -38,10 +38,11 @@
             </div>
 
             <div class="flex items-center justify-between">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <button type="submit" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Guardar
                 </button>
             </div>
         </form>
-</body>
+
+    </body>
 </html>

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('estudiante_id');
             $table->string('materia', length:120);
             $table->float('nota');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
