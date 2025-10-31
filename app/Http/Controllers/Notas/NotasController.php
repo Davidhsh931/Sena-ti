@@ -8,65 +8,56 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
-
 class NotasController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $notas = Notas::get();
-
-
-        return view::make('notas.index', compact('notas'));
+        $notas = Notas::all();
+        return View::make('notas.index', compact('notas'));
     }
 
     public function create()
     {
-
         return view('notas.create');
     }
 
-    public function store(Request $request) {
-
-        $notas = Notas::create($request->all());
-
-
+    public function store(Request $request)
+    {
+        Notas::create($request->all());
         return Redirect::to('/notas/index');
     }
 
-    public function edit($id) {
-
-        $notas = Notas::find($id);
-
+    public function edit($id)
+    {
+        $notas = Notas::findOrFail($id);
         return View::make('notas.edit', compact('notas'));
     }
 
-    public function update(Request $request, $notas) {
-
-        $notas->update($request->all());
+    public function update(Request $request, $id)
+    {
+        $nota = Notas::findOrFail($id);
+        $nota->update($request->all());
 
         return Redirect::to('/notas/index');
     }
 
-    public function delete($id) {
-
-        $notas = Notas::find($id);
-
+    public function delete($id)
+    {
+        $notas = Notas::findOrFail($id);
         return View::make('notas.delete', compact('notas'));
     }
 
-    public function destroy($notas) {
-
-        $notas->delete();
+    public function destroy($id)
+    {
+        $nota = Notas::findOrFail($id);
+        $nota->delete();
 
         return Redirect::to('/notas/index');
     }
 
-    public function ver($id){
-
+    public function ver($id)
+    {
         $notas = Notas::findOrFail($id);
-
         return view('notas.ver', compact('notas'));
-
     }
-
 }

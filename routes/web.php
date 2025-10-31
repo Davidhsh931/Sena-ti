@@ -1,14 +1,14 @@
 <?php
 
 use App\Http\Controllers\Estudiantes\EstudiantesController;
-use App\Http\Controllers\notas\NotasController;
+use App\Http\Controllers\Notas\NotasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\View;
 use App\Models\{Comentario,Estudiante};
 use App\Models\Notas;
 
-Route::get('/', function () {
+//Route::get('/', function () {
 
     /*$estudiante = new Estudiante();
     $estudiante -> nombres = 'Jose';
@@ -20,12 +20,11 @@ Route::get('/', function () {
 
     //return 'Aqui trabajare';
 
-    return view('welcome');
-});
+    //return view('welcome');
+//});
 
-Route::get('/', function () {
+//Route::get('/', function () {
 
-HEAD
     /*$nota = new notas();
 
 
@@ -38,28 +37,28 @@ HEAD
 
     //return 'Estas son mis notas';
 
-    return view('welcome');
-});
+    //return view('welcome');
+//});
 
 Route::get('/saludos', function ()  {
 return 'Hola mi king';
 })->name('saludos');
 
 Route::get('/bienvenidos',  function () {
-    return view('bienvenido');
+  return view('bienvenido');
 })->name('bienvenidos');
 
 Route::get('/dudoso',  function () {
     return view('dudoso');
 })->name('dudoso');
 
-/*Route::get('/estudiantes',  function () {
-    return view:make('estudiantes');
-})->name('estudiantes');*/
+Route::get('/estudiantes',  function () {
+    return view::make('estudiantes');
+})->name('estudiantes');
 
-/*Route::get('/notas',  function () {
-    return view:make('notas');
-})->name('notas');*/
+Route::get('/notas',  function () {
+    return view::make('notas');
+})->name('notas');
 
 Route::get('/estudiantes/index', [EstudiantesController::class, 'index'])->name('estudiantes.index');
 Route::get('/estudiantes/create', [EstudiantesController::class, 'create'])->name('estudiantes.create');
@@ -70,17 +69,14 @@ Route::get('/estudiantes/delete/{id}', [EstudiantesController::class, 'delete'])
 Route::post('/estudiantes/destroy/{estudiante}', [EstudiantesController::class, 'destroy'])->name('estudiantes.destroy');
 Route::get('/estudiantes/ver/{id}', [EstudiantesController::class, 'ver'])->name('estudiantes.ver');
 
-
-
- HEAD
-Route::get('/notas/index', [notasController::class, 'index'])->name('notas.index');
-Route::get('/notas/create', [notasController::class, 'create'])->name('notas.create');
-Route::post('/notas/store', [notasController::class, 'store'])->name('notas.store');
-Route::get('/notas/edit/{id}', [notasController::class, 'edit'])->name('notas.edit');
-Route::post('/notas/update/{notas}', [notasController::class, 'update'])->name('notas.update');
-Route::get('/notas/delete/{id}', [notasController::class, 'delete'])->name('notas.delete');
-Route::post('/notas/destroy/{notas}', [notasController::class, 'destroy'])->name('notas.destroy');
-Route::get('/notas/ver/{id}', [notasController::class, 'ver'])->name('notas.ver');
+Route::get('/notas/index', [NotasController::class, 'index'])->name('notas.index');
+Route::get('/notas/create', [NotasController::class, 'create'])->name('notas.create');
+Route::post('/notas/store', [NotasController::class, 'store'])->name('notas.store');
+Route::get('/notas/edit/{id}', [NotasController::class, 'edit'])->name('notas.edit');
+Route::post('/notas/update/{id}', [NotasController::class, 'update'])->name('notas.update');
+Route::get('/notas/delete/{id}', [NotasController::class, 'delete'])->name('notas.delete');
+Route::post('/notas/destroy/{id}', [NotasController::class, 'destroy'])->name('notas.destroy');
+Route::get('/notas/ver/{id}', [NotasController::class, 'ver'])->name('notas.ver');
 
 Route::get('/', [LoginController::class, 'showLoginForm']);
 // Rutas de autenticación 
