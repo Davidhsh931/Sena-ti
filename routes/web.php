@@ -25,7 +25,10 @@ Route::get('/', function () {
 
 Route::get('/', function () {
 
+HEAD
     /*$nota = new notas();
+
+
     $nota->estudiante_id = 1;
     $nota -> materia = 'Matematica';
     $nota -> nota = 20;
@@ -69,6 +72,7 @@ Route::get('/estudiantes/ver/{id}', [EstudiantesController::class, 'ver'])->name
 
 
 
+ HEAD
 Route::get('/notas/index', [notasController::class, 'index'])->name('notas.index');
 Route::get('/notas/create', [notasController::class, 'create'])->name('notas.create');
 Route::post('/notas/store', [notasController::class, 'store'])->name('notas.store');
@@ -88,3 +92,4 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/welcome', function () {
     return view('welcome'); 
 })->middleware('auth')->name('welcome');
+

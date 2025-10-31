@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('notas', function (Blueprint $table) {
             $table->id();
+
             $table->unsignedBigInteger('estudiante_id')->onDelete('cascade');
             $table->string('materia', length:120);
             $table->decimal('nota',5,2);

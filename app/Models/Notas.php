@@ -9,9 +9,9 @@ class Notas extends Model
 {
     use SoftDeletes;
     protected $guarded = [];
-
     public function estudiante()
     {
         return $this->belongsTo(Estudiante::class);
     }
+
 }

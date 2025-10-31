@@ -8,6 +8,7 @@ Estudiantes
 
 {{ $estudiantes }} --}}
 
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="es">

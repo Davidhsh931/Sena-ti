@@ -12,7 +12,9 @@
         </h1>
         <br>
 
+
         <form action="{{ route('notas.destroy', $notas) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
         
             @csrf
 
@@ -20,7 +22,9 @@
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                     Estudiante
                 </label>
+
                 <input type="text" name="estudiante_id" value="{{ $notas->estudiante_id }}" autocomplete="off" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
             </div>
 
             <div class="mb-6">

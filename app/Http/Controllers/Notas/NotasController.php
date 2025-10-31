@@ -15,17 +15,20 @@ class NotasController extends Controller
     {
         $notas = Notas::get();
 
+
         return view::make('notas.index', compact('notas'));
     }
 
     public function create()
     {
+
         return view('notas.create');
     }
 
     public function store(Request $request) {
 
         $notas = Notas::create($request->all());
+
 
         return Redirect::to('/notas/index');
     }
@@ -63,6 +66,7 @@ class NotasController extends Controller
         $notas = Notas::findOrFail($id);
 
         return view('notas.ver', compact('notas'));
+
     }
 
 }
